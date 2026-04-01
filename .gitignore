@@ -1,0 +1,5 @@
+# Biar file-file/folder ini ga ikut ke-commit
+*.class
+.vscode/
+bin/
+target/
