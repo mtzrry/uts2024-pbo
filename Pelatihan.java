@@ -51,12 +51,12 @@ public class Pelatihan {
 
     // method 
     public void printInfo() {
-        System.out.println("Kode Pelatihan: " + informasi_kode);
-        System.out.println("Nama Pelatihan: " + nama);
-        System.out.println("Kuota: " + kuota);
-        System.out.println("Nama Instruktur: " + nama_instruktur);
-        System.out.println("Harga: " + harga);
-        System.out.println("Pajak: " + pajak);
+        System.out.println("Kode Pelatihan: " + getInformasi_kode());
+        System.out.println("Nama Pelatihan: " + getNama());
+        System.out.println("Kuota: " + getKuota());
+        System.out.println("Nama Instruktur: " + getNama_instruktur());
+        System.out.println("Harga: " + getHarga());
+        System.out.println("Pajak: " + Pelatihan.pajak);
     }
 }
 

@@ -14,8 +14,20 @@ public class Peserta {
         this.registrasi = new Registrasi[max_registrasi]; 
         this.jumlahRegistrasi = 0;
     }
+    
+    public Peserta(String namaPeserta, String ktp, String email) {
+        this.namaPeserta = namaPeserta;
+        this.ktp = ktp;
+        this.email = email;
+        this.noTelp = "Tidak ada nomor telepon"; // Default value
+        this.registrasi = new Registrasi[max_registrasi]; 
+        this.jumlahRegistrasi = 0;
+    }
 
     //getter
+    public int getJumlahRegistrasi() {
+        return jumlahRegistrasi;
+    }
     public String getNamaPeserta() {
         return namaPeserta;
     }
@@ -59,10 +71,8 @@ public class Peserta {
         for(int i = 0; i < jumlahRegistrasi; i++) {
             Pelatihan pelatihan = registrasi[i].getPelatihan();
             double hargaAwal = pelatihan.getHarga();
-            double hargapotong = hargaAwal * Member.diskon;
-            double hargasetelahdiskon = hargaAwal - hargapotong;
-            double harga_pajak = hargasetelahdiskon * Pelatihan.pajak; 
-            double harga_akhir = hargasetelahdiskon + harga_pajak;
+            double harga_pajak = hargaAwal * Pelatihan.pajak; 
+            double harga_akhir = hargaAwal + harga_pajak;
            
             totalHarga += harga_akhir;
         }

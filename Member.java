@@ -26,6 +26,29 @@ public class Member extends Peserta {
         this.tanggalBergabung = tanggalBergabung;
     }
     // method
+
+    @Override
+    public void hitungHargaAkhir() {
+        double totalHarga = 0;
+        
+        int jumlahBeli = getJumlahRegistrasi(); 
+        
+        Registrasi[] daftarReg = getRegistrasi(); 
+
+        for(int i = 0; i < jumlahBeli; i++) {
+            Pelatihan pelatihan = daftarReg[i].getPelatihan();
+            double hargaAwal = pelatihan.getHarga();
+            
+            double hargapotong = hargaAwal * diskon;
+            double hargasetelahdiskon = hargaAwal - hargapotong;
+            double harga_pajak = hargasetelahdiskon * Pelatihan.pajak; 
+            double harga_akhir = hargasetelahdiskon + harga_pajak;
+           
+            totalHarga += harga_akhir;
+        }
+        System.out.println("Harga Akhir untuk " + getNamaPeserta() + ": " + totalHarga);
+    }
+
     @Override   
     public void printInfo() {
         super.printInfo();

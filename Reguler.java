@@ -9,7 +9,7 @@ public class Reguler extends Pelatihan{
     public Reguler(String informasi_kode, String nama, int kuota, String nama_instruktur, double harga, int durasi, String jenisLevel, String metodeKursus) {
         super(informasi_kode, nama, kuota, nama_instruktur, harga);
         this.durasi = durasi;
-        this.jenisLevel = jenisLevel;
+        this.jenisLevel = jenisLevel;    
         this.metodeKursus = metodeKursus;
     }
 
